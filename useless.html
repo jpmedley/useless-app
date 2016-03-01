@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Useless.app</title>
+  <script type="text/javascript" src="countdown.js"></script>
+  <script>
+    
+  </script>
+  <style>
+  	h1 {
+  		font-size: 200;
+  	}
+  </style>
+</head>
+<body id='root'>
+  <h1>Goodbye!</h1>
+  <div id="countdown">
+
+  </div>
+  <script>
+  	function closeMe() {
+  		window.location = "http://www.google.com";
+  	}
+
+  	navigator.serviceWorker.register('sw.js').then(function() {
+  		timeoutID = window.setTimeout(closeMe, 2000);
+  	});
+  </script>
+</body>
+</html>
