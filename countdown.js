@@ -1,14 +1,17 @@
 
 function countdown(id) {
-	var countdownDisplay = document.getElementById(id);
-	var seconds = 5;
+	var seconds = 5000;
 	var second = 0;
+	console.log("Yeah");
 
 	var interval = setInterval(function(){
-		countdownDisplay.innerText = String(seconds - second);
+		id.innerText = String((seconds - second)/1000);
 		if (second >= seconds) {
-			countdownDisplay.innerText = "Goodbye!";
+			clearInterval(interval);
+			id.innerText = "Goodbye!";
+			window.location = "http://www.google.com";
 		}
-		second++;
-	}, 1000);
+		second = second + 1000;
+	}, 1000, id);
+	return "Yeah";
 }

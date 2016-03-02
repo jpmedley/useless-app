@@ -13,17 +13,13 @@
   </style>
 </head>
 <body id='root'>
-  <h1>Goodbye!</h1>
-  <div id="countdown">
+  <h1>Useless!</h1>
+  <div id="cddisplay">
 
   </div>
   <script>
-  	function closeMe() {
-  		window.location = "http://www.google.com";
-  	}
-
   	navigator.serviceWorker.register('sw.js').then(function() {
-  		timeoutID = window.setTimeout(closeMe, 2000);
+      var msg = countdown(cddisplay);
   	});
   </script>
 </body>
