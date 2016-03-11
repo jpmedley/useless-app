@@ -1,6 +1,6 @@
 
 function countdown(id) {
-	var seconds = 5000;
+	var seconds = 20000;
 	var second = 0;
 	console.log("Yeah");
 
