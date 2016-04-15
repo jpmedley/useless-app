@@ -21,6 +21,7 @@ self.addEventListener('fetch', function(e) {
   };
 });
 
+/*
 self.addEventListener('push', function(e) {
   var index = Math.floor(Math.random() * 9);
   data = {
@@ -31,7 +32,7 @@ self.addEventListener('push', function(e) {
   e.waitUntil(
     self.registration.showNotification(title, data)
   );
-});
+}); 
 
 self.addEventListener('notificationclick', function(event) {
     event.notification.close();
@@ -49,4 +50,4 @@ self.addEventListener('notificationclick', function(event) {
       return clients.openWindow('/useless.html');
     }
   }));
-});
+}); */

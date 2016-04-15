@@ -1,0 +1,12 @@
+{  
+  "name": "Useless.app",  
+  "short_name": "Useless.app",  
+  "icons": [{  
+        "src": "images/icon-192x192.png",  
+        "sizes": "192x192",
+        "type": "image/png"
+      }],  
+  "start_url": "/useless.html?homescreen=1",  
+  "display": "browser",  
+  "gcm_sender_id": "224273183921"
+}
