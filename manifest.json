@@ -2,7 +2,7 @@
   "name": "Useless.app",  
   "short_name": "Useless.app",  
   "icons": [{  
-        "src": "images/icon-192x192.png",  
+        "src": "images/icon-192x192.png",
         "sizes": "192x192",
         "type": "image/png"
       }],  
