@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/jpmedley/useless-app/issues"
   },
-  "homepage": "https://github.com/jpmedley/useless-app#readme"
+  "homepage": "https://github.com/jpmedley/useless-app#readme",
+  "devDependencies": {
+    "workbox-build": "^1.0.0"
+  }
 }
