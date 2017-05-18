@@ -1,0 +1,26 @@
+{
+  "name": "useless",
+  "version": "0.0.1",
+  "description": "Well what do you think a useless app is. Sheesh!",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpmedley/useless-app.git"
+  },
+  "keywords": [
+    "pwa",
+    "progressive",
+    "web",
+    "app",
+    "useless"
+  ],
+  "author": "Joseph Medley <jmedley@google.com> (https://developers.google.com/web)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jpmedley/useless-app/issues"
+  },
+  "homepage": "https://github.com/jpmedley/useless-app#readme"
+}
