@@ -7,7 +7,9 @@ gulp.task('bundle', () => {
    return build.generateSW({
      globDirectory: './app/',
      swDest: './app/sw.js',
-     staticFileGlobs: ['**\/*.{html,js,css}']
+     staticFileGlobs: ['**\/*.{html,js,css}'],
+     globIgnores: ['workbox-sw.prod.v1.0.0.js', 'sw.js'],
+     navigateFallback: '404.html'
    })
    .then(() => {
      console.log('Service worker generated.');

@@ -1,53 +1,41 @@
-"use strict";
+importScripts('workbox-sw.prod.v1.0.0.js');
 
-var MESSAGES = ['Are we there yet?',
-        'I&#39;m tired.',
-        'Look out!',
-        'Is it safe?',
-        'And now for something...\ncompletely different.',
-        'Watson! Come here.',
-        'Wah!',
-        'Nooooooooo!',
-        'Help!',
-        'I thought turkies could fly.'];
+/**
+ * DO NOT EDIT THE FILE MANIFEST ENTRY
+ *
+ * The method precache() does the following:
+ * 1. Cache URLs in the manifest to a local cache.
+ * 2. When a network request is made for any of these URLs the response
+ *    will ALWAYS comes from the cache, NEVER the network.
+ * 3. When the service worker changes ONLY assets with a revision change are
+ *    updated, old cache entries are left as is.
+ *
+ * By changing the file manifest manually, your users may end up not receiving
+ * new versions of files because the revision hasn't changed.
+ *
+ * Please use workbox-build or some other tool / approach to generate the file
+ * manifest which accounts for changes to local files and update the revision
+ * accordingly.
+ */
+const fileManifest = [
+  {
+    "url": "/404.html",
+    "revision": "dcad15231e992c01092e4ca40aaa547e"
+  },
+  {
+    "url": "/countdown.js",
+    "revision": "a9db805e2b890b1b06fe6a6320572b13"
+  },
+  {
+    "url": "/index.html",
+    "revision": "e1071392dcfc76ce99bba4bc6da9b710"
+  },
+  {
+    "url": "/useless.css",
+    "revision": "b48d668400da5230e3714ae6ef87b461"
+  }
+];
 
-self.addEventListener('fetch', function(e) {
-  console.log(e.request.url);
-  if (e.request.url.indexOf('useful1.html') > 0) {
-    var res = new Response("You really thought that would work? Really?!");
-    e.respondWith(res);
-  } else {
-    return fetch(e.request);
-  };
-});
-
-/*
-self.addEventListener('push', function(e) {
-  var index = Math.floor(Math.random() * 9);
-  data = {
-    body: MESSAGES[index]
-  };
-  var title = "Useless App Needs You NOW!";
-
-  e.waitUntil(
-    self.registration.showNotification(title, data)
-  );
-}); 
-
-self.addEventListener('notificationclick', function(event) {
-    event.notification.close();
-
-    event.waitUntil(clients.matchAll({
-      type: 'window'
-    }).then(function(clientList) {
-      for (var i = 0; i < clientList.length; i++) {
-        var client = clientList[i];
-      if (client.url === '/' && 'focus' in client) {
-          return client.focus();
-      }
-    }
-    if (clients.openWindow) {
-      return clients.openWindow('/useless.html');
-    }
-  }));
-}); */
+const workboxSW = new self.WorkboxSW();
+workboxSW.precache(fileManifest);
+workboxSW.router.registerNavigationRoute("404.html");
